@@ -1,0 +1,28 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: darkcyan;
+}
+
+.gameBox {
+	background-color: #87ceeb;
+	position: relative;
+	height: 80%;
+	width: 30%;
+	border: 3px solid darkblue;
+	border-radius: 12px;
+}
+.playerElement {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	height: 100px;
+	width: 100px;
+	background-color: lime;
+}
