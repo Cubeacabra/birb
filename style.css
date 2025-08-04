@@ -11,18 +11,55 @@ body {
 }
 
 .gameBox {
-	background-color: #87ceeb;
+	background-color: #2673b2;
 	position: relative;
 	height: 80%;
 	width: 30%;
 	border: 3px solid darkblue;
 	border-radius: 12px;
+	overflow: hidden;
 }
-.playerElement {
+#playerElement {
 	position: absolute;
 	top: 100px;
 	left: 100px;
-	height: 100px;
-	width: 100px;
-	background-color: lime;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	/* background-color: lime; */
+	/* background-image: url(BlueLobster-removebg-preview.png); */
+}
+
+#block {
+	width: 30px;
+	height: 100%;
+	background-color: #ff8559;
+	animation: blockMove 2s infinite;
+	position: relative;
+}
+
+#hole {
+	width: 30px;
+	height: 150px;
+	top: -100%;
+	background-color: #2673b2;
+	/* background-color: blueviolet; */
+	animation: blockMove 2s infinite;
+	position: relative;
+}
+#ground {
+	background-color: #dab984;
+	width: 100%;
+	position: relative;
+	height: 4%;
+	top: -31%;
+}
+
+@keyframes blockMove {
+	from {
+		left: 110%;
+	}
+	to {
+		left: -10%;
+	}
 }
