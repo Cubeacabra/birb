@@ -12,15 +12,19 @@ class Player {
 		this.jumping = false;
 	}
 	jump() {
-		this.jumping = true;
-		while (this.jumps <= 100) {
-			this.y -= this.dy;
-			this.jumps++;
-		}
+		// this.jumping = true;
+		// while (this.jumps <= 100) {
+		// 	this.y -= this.dy;
+		// 	this.jumps++;
+		// }
 		this.e.style.top = this.y + "px";
 
-		this.jumps = 0;
-		this.jumping = false;
+		if (this.jumps <= 15) {
+			this.jumps += 1;
+		} else {
+			this.jumping = false;
+			this.jumps = 0;
+		}
 	}
 	gravity() {
 		this.y += this.dy;
@@ -37,18 +41,26 @@ let character = new Player(playerElement);
 setInterval(
 	(obj) => {
 		if (!obj.jumping && obj.y < 484) {
-			let top = obj.y + 3;
+			let top = obj.y + 2;
 			obj.y = top;
 			if (obj.y >= 484) {
 				obj.y = 484;
 			}
 			obj.gravity();
+		} else if (obj.jumping) {
+			let top = obj.y - 3;
+			obj.y = top;
+			if (obj.y <= 0) {
+				obj.y = 0;
+			}
 		}
+		obj.jump();
 	},
 	10,
 	character
 );
 
 document.addEventListener("click", () => {
-	character.jump();
+	character.jumping = true;
+	character.jumps = 0;
 });

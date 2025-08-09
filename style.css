@@ -34,7 +34,7 @@ body {
 	width: 30px;
 	height: 100%;
 	background-color: #ff8559;
-	animation: blockMove 2s infinite;
+	animation: blockMove 3s infinite;
 	position: relative;
 }
 
@@ -44,7 +44,7 @@ body {
 	top: -100%;
 	background-color: #2673b2;
 	/* background-color: blueviolet; */
-	animation: blockMove 2s infinite;
+	animation: blockMove 3s infinite;
 	position: relative;
 }
 #ground {
