@@ -1,6 +1,7 @@
 let gameBox = document.getElementById("gameBox");
 let playerElement = document.getElementById("playerElement");
 let hole = document.getElementById("hole");
+let block = document.getElementById("block");
 
 class Player {
 	constructor(e) {
@@ -53,8 +54,28 @@ setInterval(
 			if (obj.y <= 0) {
 				obj.y = 0;
 			}
+			obj.jump();
 		}
-		obj.jump();
+
+		//Collision, Unfinished
+
+		// let blockLeft = parseInt(
+		// 	window.getComputedStyle(block).getPropertyValue("left")
+		// );
+		// let holeTop = parseInt(
+		// 	window.getComputedStyle(hole).getPropertyValue("top")
+		// );
+		// let characterTop = -(
+		// 	50 - parseInt(window.getComputedStyle(block).getPropertyValue("top"))
+		// );
+
+		// if (
+		// 	blockLeft < 20 &&
+		// 	blockLeft > -50 &&
+		// 	(characterTop < holeTop || characterTop > holeTop + 150)
+		// ) {
+		// 	alert("u ded bro");
+		// }
 	},
 	10,
 	character
